@@ -32,4 +32,5 @@ with pd.ExcelWriter(nombrecito + '.xlsx') as writer:  # pylint: disable=abstract
     Resumen.to_excel(writer, sheet_name='Resumen') '''
 print(dfPatrabajar.size)
 # para exportar a un excel basico, pero hay otras librerias como arriba
+# explorasps
 ''' dfPatrabajar.to_excel(nombrecito + '.xlsx') '''
