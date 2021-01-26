@@ -34,3 +34,4 @@ print(dfPatrabajar.size)
 # para exportar a un excel basico, pero hay otras librerias como arriba
 # explorasps
 ''' dfPatrabajar.to_excel(nombrecito + '.xlsx') '''
+#comentario al final
