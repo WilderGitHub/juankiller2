@@ -26,12 +26,12 @@ data = {
 dfPatrabajar = pd.DataFrame(data)
 dfPatrabajar['Importe'] = pd.to_numeric(
     dfPatrabajar['Importe'], errors='coerce')
-''' Resumen = dfPatrabajar.groupby(
+Resumen = dfPatrabajar.groupby(
     ['Sucursal', 'TipoTarjeta', 'Anio', 'Mes', 'Dia']).agg({'Importe': ['sum', 'count', 'median', 'mean', 'min', 'max']})
 with pd.ExcelWriter(nombrecito + '.xlsx') as writer:  # pylint: disable=abstract-class-instantiated
-    Resumen.to_excel(writer, sheet_name='Resumen') '''
+    Resumen.to_excel(writer, sheet_name='Resumen') 
 print(dfPatrabajar.size)
 # para exportar a un excel basico, pero hay otras librerias como arriba
 # explorasps
-''' dfPatrabajar.to_excel(nombrecito + '.xlsx') '''
+#### dfPatrabajar.to_excel(nombrecito + '.xlsx')  
 #comentario al final
