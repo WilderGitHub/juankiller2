@@ -1,4 +1,7 @@
+#%matplotlib inline
 import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
 import re
 import os
 garchivo = "data/TRNBCB_2017_03.txt"
@@ -31,7 +34,21 @@ Resumen = dfPatrabajar.groupby(
 with pd.ExcelWriter(nombrecito + '.xlsx') as writer:  # pylint: disable=abstract-class-instantiated
     Resumen.to_excel(writer, sheet_name='Resumen') 
 print(dfPatrabajar.size)
+
 # para exportar a un excel basico, pero hay otras librerias como arriba
 # explorasps
 #### dfPatrabajar.to_excel(nombrecito + '.xlsx')  
-#comentario al final
+
+
+######vamos a tratar de hacer el grafico con matplolib oe
+
+# Primero transformamos a dataframe el groupby
+palgrafico=dfPatrabajar.groupby(['Dia'])['Importe'].sum().reset_index(name='ElImporte')
+#print(palgrafico.head())
+# convertimos a numpy series:
+diadia=palgrafico['Dia']
+importeimporte=palgrafico['ElImporte']
+#Pintamos el grafico
+plt.style.use('seaborn')
+plt.plot(diadia, importeimporte)
+plt.show()
